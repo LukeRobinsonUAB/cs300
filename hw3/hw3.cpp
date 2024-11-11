@@ -5,7 +5,7 @@
 //#include <map>
 //#include <unordered_set>
 //#include <set>
-//#include <stack>
+#include <stack>
 #include <algorithm>
 //#include <bitset>
 //#include <fstream>
@@ -58,6 +58,41 @@ int vitosFamily(vector<int> street) {
     return minDistanceSum;
 }
 
+int primaryArithmetic(int augend, int addend) {
+    int numCarries = 0;
+    vector<int> augendStack;
+    vector<int> addendStack;
+
+    /*if (augend < addend) {
+        int oldAugend = augend;
+        augend = addend;
+        addend = oldAugend;
+    }*/
+
+    while (augend > 0) {
+        augendStack.push_back(augend % 10);
+        augend /= 10;
+    }
+
+    while (addend > 0) {
+        addendStack.push_back(addend % 10);
+        addend /= 10;
+    }
+
+
+
+    for (int i = 0; i < min(augendStack.size(), addendStack.size()); i++) {
+        if (augendStack[i] + addendStack[i] > 9)
+            numCarries++;
+    }
+    if (numCarries > 0)
+        cout << numCarries << " carry operations." << endl;
+    else
+        cout << "No carry operation." << endl;
+    
+    return numCarries;
+}
+
 
 int main () {
 
@@ -67,6 +102,10 @@ int main () {
 
     vitosFamily(vector<int>{2, 4, 6});
     vitosFamily(vector<int>{5, 9, 13});
+
+
+    primaryArithmetic(123, 456); //0
+    primaryArithmetic(555, 555); //3 carry operations
 
 
     return 0;
