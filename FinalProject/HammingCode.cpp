@@ -60,6 +60,15 @@ void HammingCode::decode() {
     return;
 }
 
+
+void HammingCode::display() {
+    string test = this->encoded;
+    string test2 = this->decoded;
+    string test3 = "Encoded: " + test;
+    cout << test3 << endl;
+    //cout << "Encoded: " + test + "decoded: " + test2 << endl;
+}
+
 HammingCode::~HammingCode() {
     //nothing to free with delete
 }

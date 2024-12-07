@@ -11,16 +11,15 @@ class HammingCode {
 
         void decode();
         
-        void encode();
+        //void encode();
 
+        void display();
 
         ~HammingCode();
-
 
     private:
         string encoded;
         string decoded;
-        //bool multipleErrorsInOneBlock;
 
 };
 #endif
