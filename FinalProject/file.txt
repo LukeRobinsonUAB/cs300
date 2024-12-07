@@ -1,0 +1,10 @@
+10011010 is our data to encode 8 bits total now
+__1_001_1010 is data without parity bits
+011100101010 is our data encoded
+
+01     '1'     1     '001'    0      '1010'     bits in '' are the data
+
+
+encoded length = (2^3) - 1
+decoded length = (2^3) - 3 - 1
+

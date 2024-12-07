@@ -6,9 +6,9 @@ CXX = g++
 # Compiler flags
 CXXFLAGS = -std=c++23
 # Target executable name
-TARGET = lab4
+TARGET = FinalProject
 # Source files
-SRCS = FinalProject.cpp
+SRCS = FinalProject.cpp HammingCode.cpp
 
 # Object files
 OBJS = $(SRCS:.cpp=.o)
