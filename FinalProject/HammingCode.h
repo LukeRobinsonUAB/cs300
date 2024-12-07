@@ -1,7 +1,7 @@
 #ifndef _HAMMINGCODE_
 #define _HAMMINGCODE_
 #include <string>
-//#include <Eigen/Dense>
+//#include <Eigen/Dense> didn't need it for decoding
 
 using namespace std;
 class HammingCode {

@@ -22,16 +22,6 @@ void HammingCode::decode() {
     int c2 = p2 ^ x3 ^ x1 ^ x0;
     int c4 = p4 ^ x2 ^ x1 ^ x0;
 
-    /*
-    if (c1 && c2 && c4 == 0) { //no corruptions! valid [7,4] hamming code
-        string decoded = "";
-        for (int i = 0; i < encoded.length(); i++) {
-            if (!((i+1) > 0 && ((i+1) & i) == 0)) // if pos in encoded not pow^2 add char to decoded msg because it's a data bit
-                decoded += encoded.at(i);
-        }
-        this->decoded = decoded;
-        return;
-    }*/
 
     if (c1 && c2 && c4 == 1)
         encoded.at(6) = (encoded.at(6) == '0') ? '1' : '0'; 
@@ -65,8 +55,12 @@ void HammingCode::display() {
     string test = this->encoded;
     string test2 = this->decoded;
     string test3 = "Encoded: " + test;
+    string test4 = "Decoded: " + test2;
     cout << test3 << endl;
-    //cout << "Encoded: " + test + "decoded: " + test2 << endl;
+    cout << test4 << endl;
+    return;
+    //this code looks horrible for some reason stdout is not working right on my machine when nicer looking code works on online compiliers?
+    //i think because im in a VM in WSL(a VM) my stdout is not working right but like this it prints ok.
 }
 
 HammingCode::~HammingCode() {
